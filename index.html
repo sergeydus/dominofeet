@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- re: "interactive-widget=resizes-content" some vers of android use the height of the keyboard to calculate window height until window is tapped, see: https://stackoverflow.com/questions/76026292/why-is-window-innerheight-incorrect-until-i-tap-chrome-android -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, interactive-widget=resizes-content">
+    <title>Domino Fit</title>
+    <meta name = "description" content = "A puzzle about domino dots" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="bundle.js"></script>
+    <script> window.addEventListener('load', () => document.head.appendChild( Object.assign( document.createElement('script'), { src: 'https://stats.isotropic.us/res/s.js' }))); </script>
+</head>
+<body id="container">
+    <button onclick="skoob()">sugma</button>
+    <!-- top bar -->
+    <div class="uiTopBar">
+        <img src="res/settings.svg" class="tBtn dm" id="settingsBtn" title="hotkey: 's'" draggable="false">
+        <img src="res/help.svg" class="tBtn dm" id="helpBtn" title="hotkey: 'h'" draggable="false">
+        <div class="tbGameSizes">
+            <div class="tbGameSizesBg">
+                <div id="gameSize6" class="tbGameSizeContainer"><div class="tbGameSize" title="hotkey: 'z'"></div></div>
+                <div id="gameSize7" class="tbGameSizeContainer"><div class="tbGameSize" title="hotkey: 'x'"></div></div>
+                <div id="gameSize8" class="tbGameSizeContainer"><div class="tbGameSize" title="hotkey: 'c'"></div></div>
+            </div>
+        </div>
+        <img src="res/achievements.svg" class="tBtn dm" id="achievementsBtn" title="hotkey: 'q'" draggable="false">
+        <img src="res/sound.svg" class="tBtn dm" id="muteBtn" title="hotkey: 'm'" draggable="false">
+    </div>
+
+
+    <!-- bottom buttons -->
+    <div id="uiBotBar" class="uiBotBar">
+        <div class="trophy">
+            <div class="trophyImg" id="trophyImg"></div>
+            <div class="trophyDots">
+                <div id="trophyDot1" class="trophyDot"></div>
+                <div id="trophyDot2" class="trophyDot"></div>
+                <div id="trophyDot3" class="trophyDot"></div>
+            </div>
+        </div>
+        <div class="footer"></div>
+        <div class="lvlSelect">
+            <img class="aCGPrevBtn dm" id="aCGPrevBtn" src="res/prev.svg">
+            <div class="lvlTxtContainer">
+                <div class="lvlTxt" id="lvlTxt"></div>
+            </div>
+            <img class="aCGNextBtn dm" id="aCGNextBtn" src="res/next.svg">
+        </div>
+    </div>
+
+    <!-- bottom status -->
+    <div id="mouseRightSwap">
+        <div class="bottomStatus">
+            <div class="statusContainer">
+                <div class="statusIcon">
+                    <img class="RMB" src="res/RMB.svg">
+                </div>
+                <div class="statusText">
+                    <div>Mouse-Right </div>
+                    <div>to swap</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- instructions modal -->
+    <div class="i" id="instructions">
+        <div class="overlay" id="iOverlay"></div>
+        <div class="iDialog" id="iDialog">
+            <div class="dialogTitleContainer">
+                <div class="dialogTitleLine"></div>
+                <img class="dialogTitle" src="res/title_how_to_play.svg">
+                <div class="dialogTitleLine"></div>
+            </div>
+            <div class="iImages">
+                <div id="iLeft" class="iBoard"></div>
+<!-- arrow --> <img src="res/iArrow.svg" class="iArrow dm" draggable="false">
+                <div id="iRight" class="iBoard"></div>
+            </div>
+            <div id="iPrompt" class="iPrompt">Fill the board with <div class="iPromptUD" id="iPromptUD"></div> or <div class="iPromptLR" id="iPromptLR"></div> so the dots add up</div>
+        </div>
+        <div class="modalBottomContainer">
+            <div class="modalBottom">
+                <a class="modalBottomUrl" href="steam.html">STEAM</a>
+                <a class="modalBottomUrl" href="faq.html">FAQ</a>
+                <a class="modalBottomUrl" href="credits.html">CREDITS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- settings modal -->
+    <div class="settings" id="settings">
+        <div class="overlay" id="settingsOverlay"></div>
+        <div class="sDialog">
+            <div class="dialogTitleContainer">
+                <div class="dialogTitleLine"></div>
+                <img class="dialogTitle" src="res/title_settings.svg">
+                <div class="dialogTitleLine"></div>
+            </div>
+            <div class="sLR">
+                <div class="sUD">
+                    <div class="settingsPrompt swc"><label class="switch" title="Toggle dark mode. hotkey: 'c'"><input type="checkbox" id="darkModeToggle"><span class="slider"></span><div class="sliderDesc">Dark mode 🖤</div></label></div>
+                    <div class="settingsPrompt swc"><label class="switch" title="Switch colors for those with red green colorblind. hotkey: 'z'"><input type="checkbox" id="colorToggle"><span class="slider"></span><div class="sliderDesc">Colorblind mode 🌈</div></label></div>
+                    <div class="settingsPrompt swc"><label class="switch" title="Display solve time in achievements. hotkey: 't'"><input type="checkbox" id="showTime"><span class="slider"></span><div class="sliderDesc">Show solve time ⏳</div></label></div>
+                    <div class="settingsPrompt swc"><label class="switch" title="Clicking the domino select will always toggle. hotkey: 'f'"><input type="checkbox" id="clickToToggle"><span class="slider"></span><div class="sliderDesc">Tap to Toggle 🔄 </div></label></div>
+                </div>
+                <div id="sRight" class="sBoard"></div>
+            </div>
+        </div>
+        <div class="modalBottomContainer">
+            <div class="modalBottom">
+                <a class="modalBottomUrl" href="steam.html">STEAM</a>
+                <a class="modalBottomUrl" href="faq.html">FAQ</a>
+                <a class="modalBottomUrl" href="credits.html">CREDITS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- achievements modal -->
+    <div class="achievements" id="achievements">
+        <div class="overlay" id="achievementsOverlay"></div>
+        <div class="aDialogAndDaily">
+
+        <div class="aDialog">
+            <div class="aContainer">
+                <div class="dialogTitleContainer">
+                    <div class="dialogTitleLine"></div>
+                    <img class="dialogTitle" src="res/title_results.svg">
+                    <div class="dialogTitleLine"></div>
+                </div>
+                <div class="aResults">
+                    <div class="aResultsTextboxContainer">
+                    <div class="aResultsTextbox" id="aResultsTextbox">
+                        DOMINO FIT #1 <br>
+                        🏆✅✅✅✅✅
+                        </div>
+                    <div class="aResultsSubtext" id="aShowSolveTime">click here to show solve time</div>
+                    </div>
+                    <div class="aCGShare" id="aCGShare"><span class="insideBtn"><img class="btnicon" src="res/copy.svg"> <span id="shareBtn">Copy</span></span></div>
+                </div>
+                <div class="dialogTitleContainer">
+                    <div class="dialogTitleLine"></div>
+                    <img class="dialogTitle" src="res/title_overall.svg">
+                    <div class="dialogTitleLine"></div>
+                </div>
+                <div class="aInnerItems">
+                    <div class="aOSC1">
+                        <div class="aOSC2">
+                            <div class="aOS">
+                                <div class="aOS1" id="solved">37</div>
+                                <div class="aOS2">Solved</div>
+                            </div>
+                            <div class="aOS">
+                                <div class="aOS1" id="currStreak">3</div>
+                                <div class="aOS2"><div>Current</div><div>Streak</div></div>
+                            </div>
+                            <div class="aOS">
+                                <div class="aOS1" id="bestStreak">3</div>
+                                <div class="aOS2"><div>Best</div><div>Streak</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aDialog2">
+            <div class="aDialog2Flex">
+                <div class="aCGNextDaily">
+                    <div class="aCGNextDaily1"><span id="aCGNextSolveTime">03:32:12</span></div>
+                    <div class="aCGNextDaily2">New Puzzles Daily!</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="modalBottomContainer">
+            <div class="modalBottom">
+                <a class="modalBottomUrl" href="steam.html">STEAM</a>
+                <a class="modalBottomUrl" href="faq.html">FAQ</a>
+                <a class="modalBottomUrl" href="credits.html">CREDITS</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- secret modal -->
+    <div class="secret" id="secret">
+        <div class="secretOverlay" id="secretOverlay"></div>
+        <div class="secretContainer">
+            <input class="secretTextbox" id="secretTextbox" type="password" value="" autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false" maxlength="16" tabindex="1">
+            <img src="res/continue.svg" id="secretContinueBtn" class="sBtn" draggable="false">
+        </div>
+    </div>
+
+
+    <!-- our game -->
+    <div class="pane">
+        <div class="winScreen" id="winScreen"></div>
+        <div class="winScreen" id="winScreenWithAnim"></div>
+        <div class="gameAndNextContainer">
+            <div class="leftContainer"></div>
+            <div class="gameContainer" id="gameContainer">
+                <div id="game" class="game"></div>
+                <div class="gameControls" id="gameControls">
+                    <div class="nextArrowAndText" id="nextArrowAndText"><div id="nextArrow" class="nextArrow"></div><div id="nextText"></div><img id="nextTextImg" class="nextTextImg" src="res/next_text.svg"></div>
+                    <div id="controls" class="controls"></div>
+                </div>
+            </div>
+            <div class="nextContainer" id="nextContainer"></div>
+        </div>
+    </div>
+</body>
+</html>

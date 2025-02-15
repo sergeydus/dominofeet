@@ -1,0 +1,2443 @@
+:root{
+    --bgColor:#F3F3F3;
+    /* --bgColor:#e8e8e8; */
+    --fgColor: #17181A;
+
+    --trophyOnColor:green;
+    --dominoWhite:#FBFBFB;
+    --dominoBlack: #262626;
+    --dominoShadow:#D5D6DA;
+    --cbColor: #cbcbcb;
+    --boardColor: #D6D6D6;
+    --boardColor2: var(--boardColor);
+    --boardLineColor: #d2d2d2;
+    --numColor: #17181A;
+    --trophyOffColor: #E3E3E3;
+    --boardSizeSelectedBg:white;
+    --bOutlineColor:#17181A;
+    --blockShadow:hsl(0, 0%, 31%);
+    --blockTop: hsl(0, 0%, 42%);
+    --shadowDominoAdd: rgb(247, 247, 247);
+    --shadowDominoRemove: black;
+    --svgTrophyOff:#E3E3E3;
+    --tbGameSizeColor:#17181A;
+    --resultsBGTextboxColor:white;
+    --CDOM_INDENTATION:#E6E6E6;
+    --CDOM_DOTS: #17181A;
+    --CDOM_OUTLINE: #17181A;
+    --CDOM_WHITE:hsl(0, 0%, 98%);
+    --CDOM_SHADOW:#D5D6DA;
+    --gameOverlayBGColor:#000000;
+    --gameOverlayBGOpacity:.4;
+
+
+
+    /* --boardLineColor: transparent; */
+    /* --boardLineColor: red; */
+    --boardPromptBgColor: #E6E6E6;
+    --redCB:#ff4545;
+    --blueCB:#4effe7;
+    --greenCB:#6656fd;
+    --red:#FB0606;
+    --blue:#534EFF;
+    --green:#03C23E;
+    --darkBlack:#1F2124;
+    --boardRadius: 1.75vmin;
+    --sSize: 9.5vmin;
+    --pFont: 3.5vmin;
+    --pFontMobile: 6.5vmin;
+    --sOutline: solid;
+    --scaleOut:.4;
+    --bOutline:.5vmin;
+    --rounded-dvmin: calc(1vmin / 10);
+
+    --pTextMargin:.8vmin;
+
+    /* outline-style: ; */
+    --ols:2px;
+    --hSqSize: 5vmin;
+
+    --foreshortening: calc(var(--sSize) * 0.136222910216718*1.0);
+
+
+    --testDominoBorder:#292929;
+    --border-radius:calc(var(--sSize)*.115);
+
+    --blocker-outline-width: calc(var(--sSize)*.13*var(--scaleOut));
+    --tbBtnSize:3.5vmin;
+    --tbBtnPadding:1vmin;
+
+    /* ?? */
+
+}
+/* .darkMode{
+    --bgColor:hsl(0, 0%, 9%);
+    --numColor: hsl(0, 0%, 85%);
+    --boardColor: hsl(0, 0%, 34%);
+    --boardColor2: hsl(0, 0%, 52%);
+
+    --boardSizeSelectedBg:hsl(0, 0%, 29%);
+    --blockShadow:hsl(220, 6%, 35%);
+    --blockTop: hsl(0, 0%, 25%);
+    --dominoBlack: hsl(220, 6%, 10%);
+    --CDOM_INDENTATION:hsl(0, 0%, 90%);
+    --CDOM_WHITE:hsl(0, 0%, 98%);
+    --CDOM_SHADOW:hsl(220, 6%, 85%);
+    --CDOM_OUTLINE: var(--dominoBlack);
+    --CDOM_DOTS: var(--dominoBlack);
+
+    --resultsBGTextboxColor:hsl(0, 0%, 18%);
+    --trophyOnColor:hsl(120, 96%, 28%);
+    --trophyOffColor: hsl(0, 0%, 17%);
+    --shadowDominoRemove: hsl(0, 0%, 97%);
+    --shadowDominoAdd: hsl(0, 0%, 0%);
+    --gameOverlayBGOpacity:.8;
+    --bOutlineColor:#f4090900;
+} */
+
+.darkMode{
+    --bgColor:hsl(0, 0%, 4%);
+    --numColor: hsl(0, 0%, 91%);
+    --boardColor: hsl(0, 0%, 59%);
+    --boardColor2: hsl(0, 0%, 55%);
+
+    --blockShadow:hsl(220, 4%, 16%);
+    --blockTop: hsl(0, 0%, 27%);
+    --domOutline: hsl(0, 0%, 10%);
+    --CDOM_INDENTATION:hsl(0, 0%, 92%);
+    --CDOM_WHITE:hsl(0, 0%, 100%);
+    --CDOM_SHADOW:hsl(0, 0%, 75%);
+    --CDOM_DOTS: hsl(0, 0%, 15%);
+
+    --bOutlineColor:var(--domOutline);
+    --dominoBlack: var(--domOutline);
+    --CDOM_OUTLINE: var(--domOutline);
+
+    --boardSizeSelectedBg:hsl(0, 0%, 29%);
+
+    --resultsBGTextboxColor:hsl(0, 0%, 18%);
+    --trophyOnColor:hsl(120, 96%, 28%);
+    --trophyOffColor: hsl(0, 0%, 17%);
+    --shadowDominoRemove: hsl(0, 0%, 97%);
+    --shadowDominoAdd: hsla(0, 0%, 0%, 0.3);
+    --gameOverlayBGOpacity:.6;
+
+    --tbBGColor:rgb(28, 28, 28);
+    --tbBGColorUnfocused:rgb(21, 21, 21)
+    /* --tbBtnClose:"./res/Close.png";
+    --tbBtnMax:"./res/Maximize.png";
+    --tbBtnMin:"./res/Minimize.png";
+    --tbBtnRestore:"./res/Restore.png"; */
+    --tbBtnHover:rgba(177, 177, 177, 0.523);
+    --tbBtnCloseHover:rgba(225, 0, 0, 0.642);
+}
+
+.darkMode{
+    --tbGameSizeColor:var(--numColor);
+    --fgColor: var(--numColor);
+    --boardPromptBgColor: var(--numColor);
+    --svgTrophyOff:var(--trophyOffColor);
+    --gameOverlayBGColor:#000000;
+
+    /* --cbColor: #050505; */
+}
+
+
+@media screen and (orientation:portrait) {
+    :root {
+        --scaleOut:.4;
+        --foreshortening: calc(var(--sSize) * 0.136222910216718*1.5);
+        --border-radius:calc(var(--sSize)*.155);
+        --tbBtnSize:8vmin;
+        --tbBtnPadding:1vmin;
+        --bOutline:1.0vmin;
+    }
+}
+@font-face {
+    font-family: 'Arial Black Backup';
+    src: url('arial-black.ttf') format('truetype');
+}
+body {
+    background-color: var(--bgColor);
+    color: var(--fgColor);
+    font-family: "Arial Black", "Arial Black Backup";
+    margin:0;
+    padding:0;
+}
+
+.overlay{
+    top:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: #1F2124;
+    opacity: .8;
+    z-index: 1000000;
+}
+.iDialog{
+    --sSize:8vmin;
+    --pFontMobile: 5vmin;
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:auto;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    opacity:1;
+    background-color: var(--bgColor);
+    width:85vmin;
+    height:60vmin;
+    z-index: 1500000;
+
+    border-radius: 2vmin;
+    outline-offset: -.5vmin;
+    outline-style: solid;
+    outline-width: 1vmin;
+    outline-color: black;
+    box-shadow: 0px 10px 0px .5vmin rgba(0, 0, 0, 0.2);
+}
+.iTitle{
+    user-select: none;
+    text-align: center;
+    font-size: 7vmin;
+    margin:4vmin;
+    margin-top:1vmin;
+}
+.iPrompt {
+    user-select: none;
+    text-align: center;
+    font-size: 3vmin;
+    margin: 3vmin;
+    margin-top:1.5vmin;
+    transition: opacity 500ms;
+}
+.iPromptUD{
+    --sSize:2vmin;
+    width:4vmin;
+    height:4vmin;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    display:inline-flex;
+}
+.iPromptLR{
+    margin:.5vmin;
+    --sSize:2vmin;
+    width:4vmin;
+    height:4vmin;
+    /* last minute hack to get this centered */
+    vertical-align: sub;
+    justify-content: center;
+    align-items: center;
+    display:inline-flex;
+}
+.iImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top:4vmin;
+}
+
+.iArrow {
+    user-select: none;
+    display: inline-block;
+    --iaSize: 8vmin;
+    width: calc(var(--iaSize)*2);
+    height: var(--iaSize);
+    margin:1vmin;
+}
+
+.row{
+    display:flex;
+}
+
+.sq {
+
+    /* I see a weird black spot when I press on things on the ipad and on old iphones, not sure what this is, looks haunted, def needs to be fixed. NOTE: this fixes it: */
+    -webkit-tap-highlight-color: transparent; 
+
+    width: var(--sSize);
+    height: var(--sSize);
+    background-color: var(--boardColor);
+    outline-color: var(--boardLineColor);
+    border:none;
+    position:relative;
+    box-shadow: 0 calc(var(--ols) *-1) 0 var(--boardLineColor) inset, calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset, calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+}
+@media screen and (orientation:portrait) {
+    .sq {
+        outline-width: 2px;
+        outline-offset: -1px;
+    }
+}
+
+.pTopBot{
+    user-select: none;
+    color:var(--boardPromptBgColor);
+    font-size: var(--pFont);
+    width: var(--sSize);
+    height: calc(var(--sSize)/2);
+    line-height: calc(var(--sSize)/2);
+    text-align: center;
+    margin-top:var(--pTextMargin);
+    margin-bottom:var(--pTextMargin);
+}
+@media screen and (orientation:portrait) {
+    .pTopBot {
+        font-size: var(--pFontMobile);
+        height:var(--pFontMobile)
+    }
+}
+
+.pBottom{
+    user-select: none;
+    color:var(--boardPromptBgColor);
+    font-size: var(--pFont);
+    width: var(--sSize);
+    height: calc(var(--sSize)/2);
+    line-height: calc(var(--sSize)/2);
+    text-align: center;
+}
+@media screen and (orientation:portrait) {
+    .pBottom {
+        font-size: var(--pFontMobile);
+        height:var(--pFontMobile)
+    }
+}
+.pLeftRight{
+    user-select: none;
+    color:var(--boardPromptBgColor);
+    font-size: var(--pFont);
+    height: calc(var(--sSize)/2);
+    line-height: var(--sSize);
+    text-align: center;
+    width: calc(var(--sSize)/2);
+    margin:auto;
+}
+@media screen and (orientation:portrait) {
+    .pLeftRight {
+        font-size: var(--pFontMobile);
+        height:var(--pFontMobile)
+    }
+}
+.pRight{
+    user-select: none;
+    color:var(--boardPromptBgColor);
+    font-size: var(--pFont);
+    height: var(--sSize);
+    line-height: var(--sSize);
+    text-align: center;
+    width: calc(var(--sSize)/2);
+
+}
+@media screen and (orientation:portrait) {
+    .pRight {
+        font-size: var(--pFontMobile);
+        height:var(--pFontMobile)
+    }
+}
+.pCorner{
+    color:var(--boardPromptBgColor);
+    font-size: var(--pFont);
+    height: calc(var(--sSize)/2 + var(--pTextMargin)*2);;
+    width: calc(var(--sSize)/2 + var(--pTextMargin)*2);
+}
+@media screen and (orientation:portrait) {
+    .pCorner {
+        width: calc(var(--sSize)/2 + var(--pTextMargin)*2);
+    }
+}
+.pGreen{
+    color:var(--green);
+}
+
+
+.sqTopLeft{
+    border-top-left-radius: var(--boardRadius);
+}
+.sqTopRight{
+    border-top-right-radius: var(--boardRadius);
+}
+.sqBottomLeft{
+    border-bottom-left-radius: var(--boardRadius);
+}
+.sqBottomRight{
+    border-bottom-right-radius: var(--boardRadius);
+}
+.sqTopLeftb::after, .sqLeftb::after, .sqBottomb::after, .sqRightb::after, .sqTopb::after, .sqTopLeftb::after, .sqTopRightb::after, .sqBottomLeftb::after, .sqBottomRightb::after{
+    content: '';
+    position: absolute;
+    width:calc(100% - 1 * var(--ols));
+    height:calc(100% - 1 * var(--ols));
+    z-index: 5;
+    /* JOEYREMOVESCRATCHINESS */
+    /* filter:blur(.5px); */
+}
+
+.sqTopLeftb::after,
+.sqTopb::after,
+.sqTopRightb::after {
+    top: calc(-.5 * var(--ols));
+    height:110%;
+}
+
+/* we use board shadows, so the top left of a square isn't actually the top left 
+The dominoes account for this. Regardless we run into the problem where the outline takes up space
+and trims the size of the board (since safari doesn't allow border...), thus we account for it here
+*/
+.sqTopLeftb::after,
+.sqLeftb::after,
+.sqBottomLeftb::after {
+    width:110%;
+    /* add a dash of padding, otherwise we occasionally see a subpixel on the edge of the grid */
+    /* left: calc(-1*var(--bOutline)); */
+    left: calc(-.7*var(--bOutline));
+}
+
+
+.sqTopb::after, .sqTopLeftb::after, .sqBottomb::after{
+    width:calc(110%);
+}
+.sqRightb::after, .sqLeftb::after{
+    height:calc(100%);
+}
+.sqLeftb{
+}
+.sqLeftb::after {
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+.sqBottomb{
+    /* JOEYSHADOW */
+    /* height: calc(var(--sSize) - var(--foreshortening)); */
+    box-shadow: 0 calc(var(--ols) *-1) 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+}
+.sqBottomb::after {
+    border-top-left-radius: var(--boardRadius);
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.sqRightb{
+    box-shadow: calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+}
+.sqRightb::after{
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+}
+.sqTopb{
+    box-shadow: 0 var(--ols) 0 var(--boardLineColor) inset, 0 calc(var(--ols) *-1) 0 var(--boardLineColor) inset, calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset, calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+}
+.sqTopb::after{
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.sqTopLeftb{
+    border-top-left-radius: var(--boardRadius);
+}
+.sqTopLeftb::after {
+    border-top-left-radius: var(--boardRadius);
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-right: none;
+    border-bottom: none;
+}
+
+.sqTopRightb{
+    border-top-right-radius: var(--boardRadius);
+    box-shadow: 0 var(--ols) 0 var(--boardLineColor) inset, calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset, calc(var(--ols) *-1) var(--ols) 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+}
+.sqTopRightb::after {
+    border-top-right-radius: var(--boardRadius);
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-left: none;
+    border-bottom: none;
+}
+
+
+
+.sqBottomLeftb{
+    border-bottom-left-radius: var(--boardRadius);
+    /* JOEYSHADOW */
+    /* height: calc(var(--sSize) - var(--foreshortening)); */
+}
+.sqBottomLeftb::after{
+    border-bottom-left-radius: var(--boardRadius);
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-top: none;
+    border-right: none;
+}
+
+.sqBottomRightb{
+    border-bottom-right-radius: var(--boardRadius);
+    box-shadow: 0 calc(var(--ols) *-1) 0 var(--boardLineColor) inset, calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset, calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) 0 0 var(--boardLineColor) inset,
+    calc(var(--ols) *-1) calc(var(--ols) *-1) 0 var(--boardLineColor) inset;
+    /* JOEYSHADOW */
+    /* height: calc(var(--sSize) - var(--foreshortening)); */
+}
+.sqBottomRightb::after {
+    border-bottom-right-radius: var(--boardRadius);
+    border: var(--bOutline) solid var(--bOutlineColor);
+    border-left: none;
+    border-top: none;
+}
+
+
+.udDom {
+    height: calc(var(--sSize)*2);
+    width: var(--sSize);
+    /* JOEYREMOVESCRATCHINESS */
+    /* filter:blur(.5px); */
+
+}
+
+.placeStart {
+    opacity: .75;
+    /* transition: all .048 cubic-bezier(0.39, 0.575, 0.565, 1); */
+    /* transition: all .096s cubic-bezier(0.755, 0.05, 0.855, 0.06); */
+    transition: all .096s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    /* transition: all .275s cubic-bezier(0.39, 0.575, 0.565, 1); */
+    transform: rotate(3.5deg) scale(1.05) translate(1vmin, -1.5vmin);
+}
+
+.placeEnd {
+    opacity: 1;
+    transform: rotate(0) scale(1) translate(0vmin, 0vmin);
+}
+
+.ud10Middle {
+    width: calc(var(--sSize)*.6);
+    /* height: .6vmin; */
+    height: 4px;
+    background-color: var(--boardPromptBgColor);
+    margin: auto;
+    border-radius: calc(var(--sSize)*.05);
+}
+.ud10Circle0 {
+    position:absolute;
+    background-color: var(--dominoBlack);
+    margin:0;
+    height: calc(var(--sSize)*.3333);
+    width: calc(var(--sSize)*.3433);
+    top: calc(var(--sSize)*.3333);
+    left: calc(var(--sSize)*.3433);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.udOutlineShape{
+    position:absolute;
+    width: calc(var(--sSize));
+    height: calc(var(--sSize)*2 + var(--foreshortening));
+    z-index: 1;
+}
+.udWhite{
+    width: calc(var(--sSize));
+    height: calc(var(--sSize)*2 - var(--foreshortening));
+}
+
+
+.rlDom {
+
+    /* transition: all .048s cubic-bezier(0.39, 0.575, 0.565, 1); */
+    width: calc(var(--sSize)*2);
+    height: var(--sSize);
+    /* JOEYREMOVESCRATCHINESS */
+    /* filter:blur(.5px); */
+}
+.rlWhite{
+    width: calc(var(--sSize)*2);
+    height: calc(var(--sSize) - var(--foreshortening));
+}
+
+.domWhite{
+    position:absolute;
+    user-select: none;
+    pointer-events: none; /* so we can grab the square */  display:flex;
+    background-color: var(--dominoWhite);
+    border-radius: var(--border-radius);
+    transform: translateY(calc(-1 * var(--foreshortening)));
+    box-shadow: 0vmin calc(var(--sSize)*.08*var(--scaleOut)) var(--boardPromptBgColor);
+}
+@media screen and (orientation:portrait){
+    .domWhite {
+        box-shadow: 0vmin calc(var(--sSize)*.08*var(--scaleOut)) var(--boardPromptBgColor);
+    }
+}
+
+
+.domShadow{
+    position:absolute;
+    user-select: none;
+    pointer-events: none; /* so we can grab the square */  display:flex;
+    background-color: var(--dominoShadow);
+    border-radius: var(--border-radius);
+}
+
+.rlOutlineShape{
+    position:absolute;
+    width: calc(var(--sSize)*2);
+    height: calc(var(--sSize) + var(--foreshortening));
+    z-index: 1;
+}
+
+.domOutlineStyle{
+    outline-style: var(--sOutline);
+    border-radius: var(--border-radius);
+    outline-width: var(--blocker-outline-width);
+    outline-offset: calc(var(--sSize)*-.09*var(--scaleOut));
+    outline-style: solid;
+    outline-color: var(--dominoBlack);
+    transform: translateY(calc(-1* var(--foreshortening)));
+}
+
+.rl20Middle {
+    height: calc(var(--sSize)*.6);
+    width: 4px;
+    background-color: var(--boardPromptBgColor);
+    margin: auto;
+    border-radius: .5vmin;
+}
+.rl20Circle0 {
+    position:absolute;
+    background-color: var(--dominoBlack);
+    margin:0;
+    height: calc(var(--sSize)*.29);
+    width: calc(var(--sSize)*.3);
+    top: calc(var(--sSize)*.14);
+    left: calc(var(--sSize)*1.2);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.rl20Circle1 {
+    position:absolute;
+    background-color: var(--dominoBlack);
+    margin: 0;
+    height: calc(var(--sSize)*.29);
+    width: calc(var(--sSize)*.3);
+    top: calc(var(--sSize)*.54);
+    left: calc(var(--sSize)*1.55);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.dom{
+    position:absolute;
+    user-select: none;
+    pointer-events: none; /* so we can grab the square */  display:flex;
+    background-color: var(--dominoWhite);
+    border-radius: var(--border-radius);
+    outline-style: var(--sOutline);
+    outline-width: calc(var(--sSize)*.085*var(--scaleOut));
+    outline-offset: calc(var(--sSize)*-.06*var(--scaleOut));
+    outline-color: var(--dominoBlack);
+}
+@supports (-moz-appearance:none) {
+    .dom {
+        outline-width: 3px;
+        outline-offset: -2px;
+    }
+}
+@media screen and (orientation:portrait) {
+    .dom {
+        outline-width: 5px;
+        outline-offset: -3px;
+    }
+}
+
+.iBoard{
+    margin-bottom: calc(var(--sSize)/2);
+}
+
+.i{
+    display:none;
+}
+
+.game{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.pane{
+    width:100%;
+    height:100%;
+    display:flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.titleImg{
+    /* JOEYREMOVESCRATCHINESS */
+    /* filter: blur(.5px); */
+    display: block;
+    height:8vmin;
+    overflow: visible;
+    margin-top:calc(var(--tbBtnPadding) + (var(--tbBtnSize)/2) - 2.25vmin);
+}
+@media screen and (orientation:portrait){
+    .titleImg{
+        height: 11vmin;
+        margin-top:calc(var(--tbBtnPadding) + (var(--tbBtnSize)/2) - 3.5vmin);
+    }
+}
+
+.title{
+    user-select: none;
+    font-size: 4.25vmin;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    /* background-color: var(--boardColor); */
+    border-radius: calc(2vmin);
+    margin-right:0vmin;
+    margin-bottom:4vmin;
+    padding:3vmin;
+    padding-left:3vmin;
+    padding-right:3vmin;
+    line-height: 4.25vmin;
+}
+
+
+.title2{
+    color: #F36565;
+    transition: color 1s;
+}
+
+.title2Mobile{
+    display:inline;
+    color: #F36565;
+    transition: all 1s;
+}
+
+
+
+
+
+/* .ud10{
+    outline-style: none;
+    box-shadow: 0px 1vmin var(--boardPromptBgColor);
+}
+.rl20{
+    outline-style: none;
+    box-shadow: 0px 1vmin var(--boardPromptBgColor);
+} */
+
+.sqBlackTile{
+    background-color: var(--dominoBlack);
+}
+
+.sqTinted{
+    background-color: var(--boardColor2);
+}
+
+.uiTopBar{
+    user-select: none;
+    display:flex;
+    height:calc(var(--tbBtnSize) + var(--tbBtnPadding)*2);
+}
+
+.uiTopCenter{
+    display:flex;
+    width:10vmin;
+    margin:.25vmin;
+}
+
+
+.tBtn{
+    user-select: none;
+    z-index: 1000000;
+    width:var(--tbBtnSize); height:var(--tbBtnSize);
+    padding:var(--tbBtnPadding);
+    padding-left:calc(var(--tbBtnPadding)*.5);
+    padding-right:calc(var(--tbBtnPadding)*.5);
+    flex-shrink: 0;
+}
+@media screen and (orientation:portrait) {
+    .tBtn{
+        margin:0;
+    }
+}
+
+
+/* #achievementsBtn {
+    position: absolute;
+    right: 5vmin;
+} */
+
+.settings{
+    display:none;
+}
+
+.sDialog{
+    --sSize:8vmin;
+    --pFontMobile: 5vmin;
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:auto;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    opacity:1;
+    background-color: var(--bgColor);
+    width:85vmin;
+    height:55vmin;
+    border-radius: 2vmin;
+    z-index: 1250000;
+
+    outline-offset: -.5vmin;
+    outline-style: solid;
+    outline-width: 1vmin;
+    outline-color: black;
+    box-shadow: 0px 10px 0px .5vmin rgba(0, 0, 0, 0.2);
+}
+
+.sLR{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:4vmin;
+    align-items: center;
+}
+.sUD{
+    display:flex;
+    flex-direction: column;
+}
+
+/* HTML SWITCH (superiour to checkbox imo) */
+/* ex usage: <div class="swc"><label class="switch"><input type="checkbox" id="exid"><span class="slider"></span> exprompt</label></div> */
+:root{
+    --swHeight: 5vmin;
+    --swLit: var(--green);
+}
+@media screen and (orientation:portrait){
+    :root{
+    --swHeight: 5.5vmin;
+    }
+}
+.swc{
+    width: calc(8*var(--swHeight));
+}
+.switch {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    width: calc(2*var(--swHeight));
+    height: var(--swHeight);
+    left: calc(6*var(--swHeight));
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .05s;
+    transition: .05s;
+    border-radius: var(--swHeight);
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: calc(.75*var(--swHeight));
+    width: calc(.75*var(--swHeight));
+    left: calc(.15*var(--swHeight));
+    bottom: calc(.10*var(--swHeight));;
+    background-color: white;
+    -webkit-transition: .05s;
+    transition: .05s;
+    border-radius: 50%;
+}
+input:checked+.slider {
+    background-color: var(--swLit);
+    transition:  all 300ms;
+}
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--swLit);
+    transition: all 300ms;
+}
+input:checked+.slider:before {
+    -webkit-transform: translateX(calc(.95*var(--swHeight)));
+    -ms-transform: translateX(calc(.95*var(--swHeight)));
+    transform: translateX(calc(.95*var(--swHeight)));
+}
+
+.sliderDesc {
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: calc(var(--swHeight)*2 + .1vmin);
+    line-height: var(--swHeight);
+    font-size: calc(var(--swHeight)*.45);
+}
+.switch{
+    margin:.5vmin;
+}
+
+
+.settingsPrompt{
+    font-size:2.5vmin;
+}
+
+
+
+.achievements {
+    display: none;
+}
+
+
+.aDialogAndDaily{
+    display:flex;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.aDialog{
+    --sSize:8vmin;
+    /* position:absolute; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity:1;
+    background-color: var(--bgColor);
+    width:85vmin;
+    height:67vmin;
+    border-radius: 2vmin;
+    z-index: 1250000;
+
+
+    outline-offset: -.5vmin;
+    outline-style: solid;
+    outline-width: 1vmin;
+    outline-color: black;
+    box-shadow: 0px 10px 0px .5vmin rgba(0, 0, 0, 0.2);
+}
+
+.oTitle{
+    user-select: none;
+    text-align: center;
+    font-size: 6vmin;
+    margin:3vmin;
+    margin-bottom:1vmin;
+}
+
+.aContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.aInnerItems{
+    display:flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.aOSTitle{
+    font-size: 4vmin; 
+    line-height: 3vmin; 
+    margin-bottom: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.aDivider{
+    height:.5vmin;
+    width:70vmin;
+    background-color:var(--fgColor);
+    border-radius: 10vmin;
+    margin:4vmin;
+}
+.aOSC1 {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+
+}
+.aOSC2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.aOS{
+    margin:3vmin;
+    margin-top:2.5vmin;
+    margin-left: 4vmin;
+    margin-right: 4vmin;
+    margin-bottom: 1vmin;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.aOS1{
+    font-size: 6.5vmin;
+    line-height: 6.5vmin;
+    margin:0;
+}
+.aOS2{
+    margin-top:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25vmin;
+    line-height: 1.5vmin;
+    opacity: .7;
+}
+
+.center{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.hmrow{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hmsq{
+    background-color: black;
+    width:5vmin;
+    height:5vmin;
+    margin:.4vmin;
+    opacity: .2;
+}
+
+.hmsql{
+    background-color: #F36565;
+    opacity: 1;
+}
+.heatmap{
+    user-select: none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:2vmin;
+}
+
+
+.hrow{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hsq{
+    background-color: black;
+    width:var(--hSqSize);
+    height:var(--hSqSize);
+    opacity: .2;
+}
+
+.hsql{
+    background-color: #F36565;
+    opacity: 1;
+}
+.hist{
+    user-select: none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:2vmin;
+}
+
+.aCGDetails{
+    /* margin:2vmin; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    width:25vmin;
+    overflow: hidden;
+}
+.aCurrentGame{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.aCGBlock{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:1vmin;
+}
+
+.aCGResult{
+    font-size: 2.5vmin;
+}
+
+.aCGPrompt{
+    font-size: 1.25vmin;
+    line-height: 1.25vmin;
+    color: #A7A7A7;
+    margin:auto;
+}
+
+.aCGShare{
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0380CA;
+    color: rgb(239, 239, 239);
+    padding:.5vmin;
+    padding-left:2vmin;
+    padding-right:2vmin;
+    border-radius: 1vmin;
+    font-size: 2vmin;
+    margin:.5vmin;
+    cursor: pointer;
+    margin-top:.5vmin;
+    margin-bottom: 3vmin;
+
+    box-shadow: 0px 5px 0px #02507E;
+    outline-style: solid;
+    outline-color: #02507E;
+    outline-width: .3vmin;
+    outline-offset: -.3vmin;
+    width:10vmin;
+    height:4vmin;
+}
+
+.btnicon{
+    height:2.5vmin;
+    margin-right:.5vmin;
+}
+
+.insideBtn{
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .1vmin;
+}
+
+.aCGNextDaily{
+    user-select: none;
+    z-index: 1250000;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    flex-direction: column;
+}
+
+.aCGNextDaily1{
+    color: #FF2BD4;
+    line-height: 4.5vmin;
+    font-size: 2vmin;
+    font-size: 4.0vmin;
+}
+
+@media screen and (orientation:portrait) {
+.aCGNextDaily1{
+    font-size: 3.25vmin;
+    line-height: 3.75vmin;
+}
+}
+.aCGNextDaily2{
+    line-height: 1vmin;
+    font-size: 1.5vmin;
+    color: #a7198a;
+}
+@media screen and (orientation:portrait) {
+    .aCGNextDaily2{
+        line-height: 1.5vmin;
+        font-size: 2.0vmin;
+    }
+    }
+
+.hmdesc{
+    font-size:1.5vmin;
+    opacity: .5;
+}
+
+.gameOverlayBG
+{
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index: 2;
+    background-color: var(--gameOverlayBGColor);
+    opacity: var(--gameOverlayBGOpacity);
+    outline-width: .4vmin;
+    outline-offset: -.2vmin;
+    border:none;
+    transition: all 215ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.gameOverlay{
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    z-index: 1000000;
+
+    position:absolute;
+    font-size: 4vmin;
+    margin:auto;
+    --wScale:2;
+    --hScale:2;
+    width:calc(var(--sSize) * var(--wScale));
+    height:calc(var(--sSize) * var(--hScale));
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    outline-color: var(--boardLineColor);
+    outline-style: solid;
+    outline-width: .4vmin;
+    outline-offset: -.2vmin;
+    border:none;
+    transition: all 215ms cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    /* border-radius: var(--boardRadius); */
+}
+
+.winScreen {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: .001;
+    position: absolute;
+    top:0;
+    display: block;
+    user-select: none;
+    background-color: var(--green);
+    visibility: hidden;
+}
+
+.askAboutTime {
+    display:none;
+}
+
+.aTimeYesNoContainer{
+    display:flex;
+    flex-direction: row;
+}
+.aTimeYesNo {
+    width: 5vmin;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dominoWhite);
+    color: var(--dominoBlack);
+    padding: 1.5vmin;
+    border-radius: 1vmin;
+    font-size: 2.5vmin;
+    margin: 1.5vmin;
+    margin-top: 2vmin;
+    line-height: 2vmin;
+    cursor: pointer;
+}
+
+
+
+
+
+.gameControls{
+    /* fixes the text moving 1 pixel, see: https://stackoverflow.com/questions/14729492/css3-transform-rotate-causing-1px-shift-in-chrome */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* I see a weird black spot when I press on things on the ipad and on old iphones, not sure what this is, looks haunted, def needs to be fixed. NOTE: this fixes it: */
+    -webkit-tap-highlight-color: transparent; 
+
+    display:none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:28vmin;
+    align-items: flex-start;
+}
+@media screen and (orientation:portrait) {
+    .gameControls {
+        flex-direction: row;
+        margin-top:2vmin;
+        width:unset;
+    }
+}
+
+/* wrap the controls in a div of constant width and height so
+ it doesn't move around so much */
+.controlsFlex {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    transition: opacity .1s;
+}
+
+
+
+
+.control {
+
+    --sOutline:solid;
+    /* (new ssize / old sSize) * oldforeshortening */
+    --foreshortening: 0.5263157894736842vmin; 
+    --sSize:5vmin;
+    position:relative;
+    width: calc(var(--sSize)*2.5);
+    height: calc(var(--sSize)*2.25);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (orientation:portrait) {
+    .control{
+        --foreshortening: 1.5vmin; 
+    }
+
+}
+
+
+.faded {
+    opacity: .3;
+    /* --sSize:6vmin; */
+    transform: scale(.75);
+    transition: all 55.4ms;
+}
+
+.fadedSlowAnimation {
+    transition: all 249.3ms;
+}
+
+.controls{
+    margin-top:2vmin;
+}
+
+@media screen and (orientation:portrait) {
+    .control {
+        --sSize:12vmin;
+        width: calc(var(--sSize)*1.75);
+    }
+}
+@media screen and (min-aspect-ratio:70/100) and (orientation:portrait) {
+    .control {
+        --sSize:6vmin;
+        width: calc(var(--sSize)*2);
+        height: calc(var(--sSize)*2.5);
+        --foreshortening: .70vmin;
+    }
+    /* .faded { --sSize: 5vmin; } */
+}
+
+
+
+.historyPrompt {
+    font-size: 1.25vmin;
+    color: #A7A7A7;
+    margin:auto;
+    user-select: none;
+    font-style: italic;
+}
+
+.historyContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hPStart{
+    display:inline;
+    color:#0091FF;
+}
+
+.hPFinish{
+    display:inline;
+    color: #065793;
+}
+
+.hP{
+    color:#4F4F4F;
+    user-select: none;
+    width: var(--hSqSize);
+    height: var(--hSqSize);
+    font-size: 1.0vmin;
+    text-align: center;
+}
+
+.hSideLeft{
+    width: var(--hSqSize);
+    line-height: var(--hSqSize);
+    text-align: right;
+    margin-right: .5vmin;
+}
+
+.hSideRight{
+    width: var(--hSqSize);
+    line-height: var(--hSqSize);
+    text-align: left;
+    margin-left: .5vmin;
+}
+
+.hSideTop{
+    height: calc(var(--hSqSize)/2);
+    margin-bottom:.5vmin;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+}
+.hSideBottom {
+    height: calc(var(--hSqSize)/2);
+    margin-top:.5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hCorner{
+    width: calc(var(--hSqSize)/2);
+    height: calc(var(--hSqSize)/2);
+}
+
+.hpFirst{
+    font-size: 1.75vmin;
+    color: #E6E6E6;
+}
+.hpSecond{
+    font-size: 1.75vmin;
+    color: #D3D3D3;
+}
+.hpThird{
+    font-size: 1.75vmin;
+    color: #C5C5C5;
+}
+
+.secret{
+    display:none;
+
+}
+.secretOverlay{
+    top:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: #1F2124;
+    opacity: 1.0;
+    z-index: 1000000;
+}
+#titleMobile{
+    z-index: 900000;
+}
+#titleDesktop{
+    z-index: 900000;
+}
+
+.secretTextbox{
+    z-index: 1000000;
+    font-size: 3.5vmin;
+    line-height: 3.5vmin;
+    padding: 1px 2px;
+}
+.sBtn{
+    user-select: none;
+    z-index: 1000000;
+    width:4.75vmin;
+    height:4.75vmin;
+    margin:.5vmin;
+    cursor: pointer;
+}
+
+.secretContainer{
+    top:0;
+    width:100%;
+    height:100%;
+    position: absolute;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+
+.uiBotBar{
+    z-index: 20;
+    user-select: none;
+    position:absolute;
+    width:100%;
+    bottom:0;
+    display:flex;
+    align-items: flex-end;
+    justify-content: right;
+    flex-direction: row;
+    pointer-events: none;
+}
+
+
+
+.pText {
+    /* JOEYREMOVESCRATCHINESS */
+    /* filter: blur(.5px); */
+    transition: color 300ms;
+    transition-delay: 48ms;
+}
+
+.pText svg path {
+    transition: fill 300ms, stroke 300ms;
+    transition-delay: 48ms;
+}
+
+.askDialogContainer{
+    display:flex;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.askDialog{
+    --sSize:8vmin;
+    /* position:absolute; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity:1;
+    background-color: var(--bgColor);
+    width:65vmin;
+    height:22vmin;
+    border-radius: 3vmin;
+    z-index: 1250000;
+}
+
+.askAboutTimeContainer{
+    user-select: none;
+    font-size: 3vmin;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pAnimStart {
+    opacity: .1;
+    z-index: -1;
+}
+.pAnimTopStart {
+    transform: rotate(0deg) scale(1) translate(0vmin, 5vmin);
+}
+.pAnimLeftStart {
+    transform: rotate(0deg) scale(1) translate(5vmin, 0vmin);
+}
+.pAnimRightStart {
+    transform: rotate(0deg) scale(1) translate(-5vmin, 0vmin);
+}
+.pAnimBottomStart {
+    transform: rotate(0deg) scale(1) translate(0vmin, -5vmin);
+}
+.pAnimEnd {
+    opacity: 1;
+    /* note this effects the text color transform, the pText is prolly not needed :< */
+    transition: opacity .3s cubic-bezier(0.39, 0.575, 0.565, 1), color 300ms cubic-bezier(0.39, 0.575, 0.565, 1) 48ms
+}
+.pAnimEndLeftRight{
+    transform: rotate(0) scale(1) translate(0vmin, calc(-1*var(--foreshortening)));
+}
+.pAnimEndTopBottom{
+    transform: rotate(0) scale(1) translate(0vmin, calc(-.4*var(--foreshortening)));
+}
+
+
+.winAnimation {
+    opacity:0;
+    position:absolute;
+    top:0;
+    width:60vmin;
+    height:100%;
+    z-index: 10000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-delay: .35s;
+    user-select: none;
+    pointer-events: none;
+
+    user-select: none;
+    z-index: 1000000;
+
+    position:absolute;
+    font-size: 4vmin;
+    margin:auto;
+    --wScale:2;
+    --hScale:2;
+    width:calc(var(--sSize) * var(--wScale));
+    height:calc(var(--sSize) * var(--hScale));
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.greenRibbon {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:21vmin;
+    font-size: 9vmin;
+    user-select: none;
+}
+
+.winText {
+    height: 10vmin;
+    margin: -1.5vmin;
+}
+
+@media screen and (orientation:portrait) {
+    .winText {
+        height: 15vmin;
+        margin: -2.0vmin;
+    }
+}
+.winSubtext{
+    height: 6.5vmin;
+}
+@media screen and (orientation:portrait) {
+    .winSubtext{
+        height: 8vmin;
+    }
+}
+
+.ribbonText{
+    color: #FFFFFF;
+}
+
+
+
+.idom{
+    outline-width: 1px;
+    outline-offset: 0px;
+    border-radius: 1px;
+    --border-radius:calc(var(--sSize)*.115);
+    --foreshortening: .25vmin;
+}
+
+.boardBottomShadow{
+    position:absolute;
+    pointer-events: none;
+    outline:black;
+    outline-width: .5vmin;
+    outline-offset: -.5vmin;
+    outline-style: none;
+    /* left:calc(var(--sSize)*1); */
+    margin-top: calc(var(--sSize)*.5);
+    margin-left: calc(var(--sSize)*.5);
+    width:calc(var(--sSize)*6);
+    height:calc(var(--sSize)*6 - var(--foreshortening));
+    z-index: 10000000;
+    border-radius: calc(1.5*var(--boardRadius));
+    box-shadow: 0vmin calc(2*var(--foreshortening)) var(--bgColor);
+}
+
+.boardTopShadow{
+    position:absolute;
+    pointer-events: none;
+    /* outline:black;
+    outline-width: .5vmin;
+    outline-style: solid; */
+    /* left:calc(var(--sSize)*1); */
+    margin-top: calc(var(--sSize)*.5);
+    margin-left: calc(var(--sSize)*.5);
+    width:calc(var(--sSize)*6);
+    height:calc(var(--sSize)*6 - var(--foreshortening));
+    /* z-index: 10000000; */
+    border-radius: calc(1.5*var(--boardRadius));
+    box-shadow: 0vmin calc(-1*var(--foreshortening)) black;
+}
+
+.sqBlockShadow{
+    --sqBlockLineWidth: calc(var(--sSize)*.0518);
+}
+
+.sqBlockShadow{
+    transition: clip-path 200ms;
+    left: calc(-1 * var(--ols));
+    top: calc(0 * var(--ols));
+    height: calc(var(--sSize));
+    width: calc(var(--sSize) + var(--sqBlockLineWidth));
+    position:absolute;
+    user-select: none;
+    pointer-events: none; /* so we can grab the square */  display:flex;
+    background-color: var(--blockShadow);
+    border-radius: calc(var(--border-radius)*2);
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%); 
+}
+.sqBlockOutline{
+    position:absolute;
+    height: calc(var(--sSize) + 1.0*var(--foreshortening) + 1*var(--sqBlockLineWidth));
+    width: calc(var(--sSize) + var(--sqBlockLineWidth));
+    border-radius: calc(var(--border-radius)*2);
+    border-width: var(--sqBlockLineWidth);
+    box-sizing: border-box;
+    /* outline-offset: calc(var(--sSize)*-.09*var(--scaleOut)); */
+    border-style: solid;
+    border-color: var(--dominoBlack);
+    top:calc(-1* var(--foreshortening) - 1*var(--sqBlockLineWidth));
+    /* transform was causing wierd visual artifacts, save it for when you need it */
+    /* transform: translateY(calc(-1* var(--foreshortening) - 1*var(--sqBlockLineWidth))); */
+    z-index: 1;
+    border-style: solid;
+}
+.sqBlockTop{
+    border-radius: calc(var(--border-radius)*2);
+    height: calc(var(--sSize) - .2*var(--foreshortening));
+    width: calc(var(--sSize) + var(--sqBlockLineWidth));
+    background-color: var(--blockTop);
+    position:absolute;
+    top: calc(-1* var(--foreshortening) - 1*var(--sqBlockLineWidth));
+    /* box-shadow: 0vmin calc((var(--sSize) + var(--sqBlockLineWidth))*.3*var(--scaleOut)) #5e5e5e; */
+}
+.sqBlackBottomOpen{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-style: none;
+
+    box-shadow: 0vmin calc(3*var(--foreshortening)) var(--blockTop);
+}
+.sqBlackTopOpen{
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-style: none;
+}
+
+.sqBlackRightOpen{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: none;
+}
+.sqBlackLeftOpen{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: none;
+}
+
+.blockTLPatch{
+    position:absolute;
+    width:calc(var(--sSize)*.1);
+    height:calc(var(--sSize)*.1);
+    background-color: transparent;
+    border-color: var(--dominoBlack);
+    border-radius: calc(1*var(--border-radius));
+    transform: translate(calc(-1*var(--blocker-outline-width)), calc(-1.5*var(--foreshortening)));
+    /* transform: translate(-.5vmin, -1.5vmin); */
+    border-style:solid;
+    border-top-style: none;
+    border-left-style: none;
+    box-sizing:border-box;
+    z-index: 100000000;
+}
+.blockTRPatch{
+    position:absolute;
+    width:calc(var(--sSize)*.1);
+    height:calc(var(--sSize)*.1);
+    background-color: transparent;
+    border-color: var(--dominoBlack);
+    border-radius: calc(1*var(--border-radius));
+    border-width: var(--blocker-outline-width);
+    transform: translate(calc(var(--sSize) - 1*var(--blocker-outline-width)), -1.5vmin);
+    /* transform: translate(calc(var(--sSize) - .5vmin), -1.5vmin); */
+    border-style:solid;
+    border-top-style: none;
+    border-right-style: none;
+    box-sizing:border-box;
+    z-index: 100000000;
+}
+
+#DOM_INDENTATION {
+    fill: var(--CDOM_INDENTATION) !important;
+}
+#DOM_DOTS * {
+    fill: var(--CDOM_DOTS) !important;
+}
+#DOM_OUTLINE{
+    stroke: var(--CDOM_OUTLINE) !important;
+}
+#DOM_WHITE {
+    fill: var(--CDOM_WHITE) !important;
+}
+#DOM_SHADOW {
+    fill: var(--CDOM_SHADOW) !important;
+}
+
+.svgPath-red svg path {
+        stroke: var(--red) !important;  /* Changes the stroke color of the path */
+}
+.svgPath-green svg path {
+    stroke: var(--green) !important;  /* Changes the stroke color of the path */
+}
+.svgPath-black svg path {
+    stroke: var(--numColor) !important;  /* Changes the stroke color of the path */
+}
+.svgPath-TrophySvgOffColor svg path {
+    fill: var(--svgTrophyOff) !important;  
+}
+
+.uiTopBarLineContainer{
+    width:100%;
+    height: var(--tbBtnSize);
+    display: flex;
+    align-items: center;
+    margin-top:calc(var(--tbBtnPadding));
+    margin-bottom:calc(var(--tbBtnPadding));
+}
+
+.uiTopBarLine{
+    height: 1px;
+    width:100%;
+    background-color: var(--boardPromptBgColor);
+    margin-left: 1.5vmin;
+    margin-right: 1.5vmin;
+
+}
+
+
+
+#container{
+    position: absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.lvlSelect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    pointer-events: all;
+}
+
+.trophy{
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding:1vmin;
+    padding-bottom: 1.5vmin;
+}
+.trophyImg{
+    height:10vmin;
+}
+.trophyDots{
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.trophyDot{
+    width:1.4vmin;
+    height:1.4vmin;
+    margin-left:.4vmin;
+    margin-right:.4vmin;
+    border-radius: 50%;
+    background-color: var(--trophyOffColor);
+}
+
+.footer{
+    background-color: black;
+    width:100%;
+}
+
+.aCGNextBtn {
+    margin: .5vmin;
+    user-select: none;
+    cursor: pointer;
+    height:4vmin;
+    padding-top:1vmin;
+    padding-bottom:1vmin;
+
+    -webkit-tap-highlight-color: transparent;
+}
+@media screen and (orientation:portrait) {
+.aCGNextBtn {
+        height: 6vmin;
+    }
+}
+.aCGPrevBtn {
+    -webkit-tap-highlight-color: transparent;
+    margin: .5vmin;
+    user-select: none;
+    cursor: pointer;
+    height:4vmin;
+    padding-top:1vmin;
+    padding-bottom:1vmin;
+    display:none;
+}
+@media screen and (orientation:portrait) {
+.aCGPrevBtn {
+        height: 6vmin;
+    }
+}
+.lvlTxtContainer{
+    width:5vmin;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.lvlTxt{
+    height:8vmin;
+    user-select: none;
+    color: #737373;
+}
+.lvlTxt svg path {
+    stroke: var(--numColor) !important;  /* Changes the stroke color of the path */
+}
+@media screen and (orientation:portrait) {
+    /* watch out for the #2, it is wide, need to have the container at least as wide
+    or it will look small */
+    .lvlTxtContainer{ 
+        width:7vmin;
+    }
+    .lvlTxt {
+        height: 10vmin;
+    }
+}
+
+.gameAndNextContainer {
+    user-select: none;
+    margin:auto;
+    display:flex;
+    width:100%;
+}
+
+.leftContainer{
+    width:100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextContainer{
+    flex-grow: 1;
+    flex-shrink: 1;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 2px 2px 1px rgba(0, 0, 0, .7));
+}
+
+.nextArrow{
+    cursor: pointer; /* Changes the cursor on hover */
+}
+#nextArrow:hover {
+    transform: scale(1.1); /* Grows the button by 10% */
+  }
+
+.nextTextImg {
+    opacity: 0;
+    user-select: none;
+    height: 8vmin;
+    padding-right: 5vmin;
+    margin-top:-2vmin;
+    transition: opacity 300ms;
+}
+
+.hover-effect {
+    animation: float 2.5s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-.35vmin);
+    }
+  }
+  .nextArrowAndText{
+    z-index: 21;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display:none;
+
+    margin-left: 6vmin;
+  }
+
+  .gameOverlayText{
+    z-index: 1000001;
+    color:white;
+  }
+
+  .dialogTitleContainer {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .dialogTitle{
+    height:4.5vmin;
+  }
+
+.dialogTitleLine{
+    height: 1px;
+    width:100%;
+    background-color: var(--boardPromptBgColor);
+    margin-left: 5.5vmin;
+    margin-right: 5.5vmin;
+}
+@media screen and (orientation:portrait) {
+    .dialogTitleLine{
+    margin-left: 2.5vmin;
+    margin-right: 2.5vmin;
+    }
+}
+
+.aResults{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+}
+
+.aResultsTextbox{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--resultsBGTextboxColor);
+    width:60vmin;
+    height:20vmin;
+    border-radius: 1vmin;
+    font-size: 3vmin;
+    text-align: center;
+}
+
+.aDialog2{
+    --sSize:8vmin;
+    /* position:absolute; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity:1;
+    background-color: var(--bgColor);
+    width:calc(85vmin*.5);
+    height:12vmin;
+    margin:2vmin;
+    border-radius: 1vmin;
+    z-index: 1250000;
+
+
+    outline-offset: -.5vmin;
+    outline-style: solid;
+    outline-width: 1vmin;
+    outline-color: black;
+    box-shadow: 0px 10px 0px .5vmin rgba(0, 0, 0, 0.2);
+}
+
+.aDailyTimePrompt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vmin;
+}
+
+.aDialog2Flex{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aResultsSubtext{
+   font-family: Arial, Helvetica, sans-serif; 
+    line-height: 2vmin;
+    font-size: 1.5vmin;
+    margin-top: 0;
+    color:#0380CA;
+    user-select: none;
+    cursor: pointer;
+}
+
+.aResultsTextboxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2vmin;
+}
+
+#shareBtn{
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+}
+
+.nextArrowContainer{
+    display:inline;
+}
+
+.nextArrowAndText{
+    margin-top:2vmin;
+}
+
+.nextArrow{
+    height:14vmin;
+}
+.nextTextImg{
+    height:6vmin;
+}
+@media screen and (orientation:portrait) {
+    .nextArrow{
+        height:20vmin;
+    }
+    .nextTextImg{
+        height:10vmin;
+    }
+}
+
+@media screen and (min-aspect-ratio:70/100) and (orientation:portrait) {
+    .nextArrowAndText{
+        margin-top:0vmin;
+    }
+    .nextArrow{
+        height:13vmin;
+    }
+    .nextTextImg{
+        height:6vmin;
+    }
+}
+
+.nextArrowAndText{
+    position: absolute;
+
+}
+
+.bottomStatus {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0vmin;
+    right: 0vmin;
+    left: 0vmin;
+    user-select: none;
+}
+.RMB{
+    height:6vmin;
+}
+.statusContainer{
+    opacity: .2;
+    height:7vmin;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (orientation:portrait) {
+    .bottomStatus {
+        display: none;
+    }
+}
+
+.statusIcon{
+    display:flex;
+}
+.statusText {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2vmin;
+    margin: .5vmin;
+}
+
+#mouseRightSwap {
+    transition: opacity 300ms;
+    opacity: 0;
+}
+
+.domShadow{
+    background-color: transparent;
+}
+
+/* .domimg{
+    --foreshortening: calc(var(--sSize)*0.2117647058823529);
+    --outlineWidth: calc(var(--sSize)*0.0464396284829721);
+    background-color: transparent;
+    width:calc(var(--sSize) + 2*var(--outlineWidth));
+    height:calc(2*var(--sSize) + var(--foreshortening));
+    transform: translate(calc(-.5*var(--ols)), calc(-.5*var(--ols) - var(--foreshortening)));
+} */
+
+.domimg{
+    --fS: 0.136222910216718; --oS: 0.043343653250774; --dScale:2.0887573964497;
+    /* this is the ratio of the shadow size over the size of a domino square in the image*/
+    --foreshortening: calc(var(--sSize)*var(--fS));
+    /* this is the ratio of the domino outline over the size of a domino square in the image*/
+    --outlineWidth: calc(var(--sSize)*var(--oS));
+    background-color: transparent;
+    /* vertical domino aspect ratio (make sure svg is integerxinteger) */
+    height: calc((var(--sSize) + 1.0*var(--outlineWidth)) * var(--dScale)); 
+    transform: translate(calc(-.5*var(--ols) - .5*var(--outlineWidth)), calc(-.5*var(--ols) - 0*var(--outlineWidth) - var(--foreshortening)));
+
+}
+
+
+.domimglr{
+    --fS: 0.136222910216718; --oS: 0.0439628482972136; --dScale:0.577039274924471;
+    /* this is the ratio of the shadow size over the size of a domino square in the image*/
+    --foreshortening: calc(var(--sSize)*var(--fS));
+    /* this is the ratio of the domino outline over the size of a domino square in the image*/
+    --outlineWidth: calc(var(--sSize)*var(--oS));
+    background-color: transparent;
+    /* horizontal domino aspect ratio. Note we account for the left and right .5 outline (outline is centered) */
+    height:calc((2*var(--sSize) + 1*var(--outlineWidth)) * var(--dScale));
+    transform: translate(calc(-.5*var(--ols) - .5*var(--outlineWidth)), calc(-.5*var(--ols) - var(--foreshortening) - .5*var(--outlineWidth)));
+}
+
+.gameOverlayText{
+    opacity: .9;
+}
+.gameOverlayText{
+    opacity: .9;
+    font-size: 3vmin;
+}
+@media screen and (orientation:portrait){
+.gameOverlayText{
+    font-size: 4vmin;
+}
+}
+
+
+.gameOverlayCircles {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    margin-top:.25vmin;
+}
+.circ {
+    width: calc(var(--rounded-dvmin)*8);
+    height: calc(var(--rounded-dvmin)*8);
+    background-color: white;
+    margin: calc(var(--rounded-dvmin)*2);
+    border-radius: calc(var(--rounded-dvmin)*4);
+    opacity: .9;
+}
+
+.dcirc {
+    background-color: black;
+    opacity: .6;
+}
+
+
+.gameHitbox{
+    position:absolute;
+    width: calc(var(--sSize));
+    height: calc(var(--sSize));
+    background-color: transparent;
+    /* pointer-events: none; */
+    z-index: 1000000;
+}
+
+.shadowDomino{
+    position:absolute;
+    background-color: var(--shadowDominoAdd);
+    opacity: .0001;
+    border-radius: calc(var(--sSize)*.15);
+    z-index: 1;
+    pointer-events: none;
+}
+.shadowDominoRL{
+    width: calc(var(--sSize)*2);
+    height: var(--sSize);
+}
+.shadowDominoUD {
+    top: calc(-1 * var(--sSize));
+    width: var(--sSize);
+    height: calc(var(--sSize)*2);
+}
+.shadowDominoRemove{
+    background-color: var(--shadowDominoRemove);
+    opacity: .0001;
+}
+
+:root{
+    --tbHeight:calc((var(--tbBtnSize) + var(--tbBtnPadding)*2) * .9);
+}
+
+.tbGameSizesBg{
+    background-color: var(--trophyOffColor);
+    height:calc(var(--tbBtnSize));
+    margin:var(--tbBtnPadding);
+    border-radius: calc(var(--tbHeight) * .2);
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.tbGameSizes{
+    -webkit-app-region:no-drag;
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000000;
+}
+
+.tbGameSize {
+    display:flex;
+    transition: all var(--gSizeTransitionSpeed);
+    height:calc(var(--tbHeight) * var(--gSizeScale));
+    pointer-events: all;
+    user-select: none;
+    opacity: var(--gSizeOpacity);
+    margin:auto;
+
+}
+
+
+.tbGameSizeContainer {
+    height:calc(var(--tbBtnSize));
+    width: calc(var(--tbHeight) * 1.5);
+    padding-left: 6px;
+    padding-right: 6px;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(var(--tbHeight) * .2);
+    transition: all 300ms;
+
+    --gSizeOpacity:.3;
+    --gSizeScale: .35;
+    --gSizeTransitionSpeed: 50ms;
+}
+.tbGameSizeContainer:hover{
+    --gSizeOpacity:.6;
+    --gSizeScale: .41;
+}
+.tbGameSizeContainerChosen{
+    --gSizeOpacity:.9;
+    --gSizeScale: .45;
+    --gSizeTransitionSpeed: 200ms;
+    background-color: var(--boardSizeSelectedBg);
+}
+.tbGameSizeContainerChosen:hover{
+    --gSizeOpacity:.9;
+    --gSizeScale: .45;
+}
+
+.modalBottomContainer{
+    position: absolute;
+    width:100%;
+    height:100%;
+    bottom:0;
+}
+.modalBottom {
+    display: flex;
+    flex-direction: row;
+    bottom:0;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+.modalBottomUrl{
+    display: block;
+    font-size: 2vmin;
+    color:#2c2c2c;
+    z-index: 1000000;
+    text-decoration: underline;
+    cursor: pointer;
+    margin:5vmin;
+    margin-bottom: 1vmin;
+}
+
+@media screen and (orientation:portrait) {
+    .modalBottomUrl{
+        font-size: 3vmin;
+    } 
+}
+
+
+.tbGameSize svg path {
+    stroke: var(--tbGameSizeColor) !important;
+}
+.aGameSize svg path {
+    stroke: var(--tbGameSizeColor) !important;
+}
