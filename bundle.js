@@ -4081,3 +4081,15 @@ function skoob(){
   localStorage.setItem('kurva',codeNumber)
   location.reload()
 }
+function toggleMode() {
+  console.log('toggleMode')
+
+  const root = document.documentElement;
+  const currentBgColor = getComputedStyle(root).getPropertyValue('--bgColor').trim();
+
+  if (currentBgColor === '#efedea') {
+    root.style.setProperty('--bgColor', '#808080'); // Set to dark mode
+  } else {
+    root.style.setProperty('--bgColor', '#efedea'); // Set to light mode
+  }
+}

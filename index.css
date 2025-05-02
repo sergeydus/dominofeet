@@ -1,5 +1,6 @@
 :root{
-    --bgColor:#F3F3F3;
+    color-scheme: light dark;
+    --bgColor:light-dark(#efedea, #808080);
     /* --bgColor:#e8e8e8; */
     --fgColor: #17181A;
 
